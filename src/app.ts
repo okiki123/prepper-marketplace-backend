@@ -10,7 +10,7 @@ app.use(middlewares);
 db.connect();
 
 app.get('/', (req: Request, res: Response) => {
-    res.json({message: "testing"});
+    res.json({message: 'testing'});
 });
 
 app.listen(PORT, () => {
