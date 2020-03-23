@@ -10,6 +10,7 @@
     "dev": "npm-run-all kill start",
     "build:dev": "npm-run-all watch-ts",
     "watch-ts": "tsc -w",
+    "build": "tsc",
     "watch:dev": "nodemon",
     "kill": "kill $(lsof -t -i:7000) | exit 0",
     "clean": "rimraf ./dist/*"
