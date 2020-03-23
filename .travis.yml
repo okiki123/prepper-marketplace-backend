@@ -13,8 +13,10 @@ install:
 before_script:
   - npm run lint
 script:
-  - if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then npm run clean; npm run build
-  ; fi
+  - 'if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then
+  npm run clean;
+  npm run build
+  ; fi'
 deploy:
   provider: heroku
   api_key:
