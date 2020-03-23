@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "11"
+dist: trusty
+sudo: required
+notifications:
+  slack: prepperlearning:VgHyCXQ8lq11Qonx7OFYEGoA
+branches:
+  only:
+    - staging
+before_script:
+  - npm install -g firebase-tools
+  - npm install
+script:
+  -  'if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then
+        npm run lint;
+        firebase deploy --token=${FIREBASE_API_TOKEN} ;
+      fi'
+after_success:
+  - 'if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then
+          echo "Build succesful"
+        fi'
+
