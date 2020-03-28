@@ -6,8 +6,7 @@
   "scripts": {
     "lint": "eslint src/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/server.js",
-    "dev": "ts-node src/server.ts",
+    "start": "ts-node src/server.ts",
     "build:dev": "npm-run-all watch-ts",
     "watch-ts": "tsc -w",
     "build": "tsc",
@@ -16,7 +15,7 @@
     "clean": "rimraf ./dist/*"
   },
   "nodemonConfig": {
-    "exec": "npm run dev",
+    "exec": "npm run start",
     "watch": [
       "dist/*"
     ]
