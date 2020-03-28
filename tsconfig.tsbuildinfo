@@ -350,8 +350,8 @@
         "signature": "c9ae0b351a07b52f29a28e869d8c7c8d29743bbb5eeddc7c0b5b2a69a2450528"
       },
       "./src/config/middlewares.ts": {
-        "version": "dec07ade5754f02f25bb96561336e784df9d548bd2bb23316cb7e0745d8620f1",
-        "signature": "c106970ee4b686b5ebf0964ea4e0d1b2af02bdecd2d5cfeecedeb7bb5b2f404b"
+        "version": "a2732f516f958efc2600aac71f6be03007d97219f1543a0edaf10f7a19e2030a",
+        "signature": "8d2c185a5a81c58623e12944d37d05f571f00e247b0b05d0a5fa0263f90ad0f6"
       },
       "./node_modules/@types/bson/index.d.ts": {
         "version": "3994ebfd11faa4018d8e1b879190046588f41f5cd60438e642ca39a705c726be",
@@ -370,11 +370,99 @@
         "signature": "ddb08ee4a362f4e532a00ef9667c6cf63630f150046e8ed8c242ce044da457e5"
       },
       "./src/config/db.ts": {
-        "version": "2d6794cc320246bfa7da20dc59dfa3e6b1fd17a9127ea78bc62fc94b54fd3cdd",
-        "signature": "2872ef0f5673fa92ca5cf4b48fbaaa741b9ffe8d3f887dd5b0e674b606faee36"
+        "version": "8504a39a1715169e10b0124ad3182ab20148660d08476b8f5de73960ab32f11a",
+        "signature": "aa3321b0496fd1021e3e7e33ed9f1d4b4808a39478caba50d741ad1b3481ebc5"
+      },
+      "./node_modules/@types/passport-strategy/index.d.ts": {
+        "version": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52",
+        "signature": "29d59e921bc723594bbfc98230d24f38f0d5a669f28fcf989b7468f4f95b7c52"
+      },
+      "./node_modules/@types/passport-local/index.d.ts": {
+        "version": "e50f9ae34bb92232533e3a32848970dd04f874a8f64d3ae48980e062b6489f26",
+        "signature": "e50f9ae34bb92232533e3a32848970dd04f874a8f64d3ae48980e062b6489f26"
+      },
+      "./src/interfaces/base-model.interface.ts": {
+        "version": "ec3f623d0e8ca2602758d5fd57d641d87b341bea587cae8d7f8147e4aebb2a48",
+        "signature": "a0a68e90726501456a58f1b45785a4537760a9a4159d3a443eddd77ab227e5b1"
+      },
+      "./src/interfaces/user-model.interface.ts": {
+        "version": "05e16da55c9573c7cecc43c471694f471a2de4d0cee7fbaf380b262c61daa47f",
+        "signature": "0fdc2625bbc395cf6259d226c92b4357359b0e2a8ae002748fffa7c3e5a1724d"
+      },
+      "./node_modules/@types/jsonwebtoken/index.d.ts": {
+        "version": "ed2e832899b97594aebebb6f4e29124156d85edad0c4764d3b8a3e5ad1db7eb5",
+        "signature": "ed2e832899b97594aebebb6f4e29124156d85edad0c4764d3b8a3e5ad1db7eb5"
+      },
+      "./node_modules/@types/validator/index.d.ts": {
+        "version": "2d8a7dd71d6ec7fc9c397dfad3ce07fadebd0c4f6b7180c66fddbd2f1a429a9c",
+        "signature": "2d8a7dd71d6ec7fc9c397dfad3ce07fadebd0c4f6b7180c66fddbd2f1a429a9c"
+      },
+      "./src/constants/error-message.ts": {
+        "version": "053ad459f3f07ad7f35412fe8feefa29ebcae3b9a0a5016f0647808832bd7d1d",
+        "signature": "644480b38c6b3b54155741fb6e1334646d185ef68ab3fefe631ea3ca3c08323f"
+      },
+      "./src/models/user.model.ts": {
+        "version": "aabc57dac136f8e97b2e11ba61a30a29b459a2299b33c2ba593368577a979289",
+        "signature": "d94d3feb68c7ac746e3f3113ad9acc80d946033ee9931e7d08785d2721867959"
+      },
+      "./src/config/passport.ts": {
+        "version": "40056a68ad8474a65382505298c6002ea3e5e68dc8f4beca3fb03183b23125fd",
+        "signature": "1d388feaa33e12c6f81fa71530ef728c2e09f229938399fce94d55305aef384c"
+      },
+      "./src/libs/utils.ts": {
+        "version": "6e6420ff5814ff1945ea5b27f48120fbe5eba1602312e1de214ec54a1dcb4499",
+        "signature": "76a9e2ad39e0b4d3e10226d644073d8231818ded6fffa3cc87a6952c1433ebec"
+      },
+      "./src/constants/success-message.ts": {
+        "version": "467ab1ff9d24aeca74a1903e966fa575a1199a276b1e2798ca57b677a7af48d4",
+        "signature": "972b3bf6c624d71ab7a839e7392a2ae98e7ae3a604be1ea4f1c2f56287721177"
+      },
+      "./src/constants/status-code.ts": {
+        "version": "7a51b19723c2d160d4ac16d06dd81b77331385a33121c5e661a29311a91c7780",
+        "signature": "3697fecfb8eaf15e0e242974bb58edd94fb092d6beb7885ce8ff341cef15d33e"
+      },
+      "./src/libs/req-validators.ts": {
+        "version": "ebe2995e8bdd00ca5d25eb74d5dac735c00e237d26713630e604849f82259ee4",
+        "signature": "f9a4bff17fb40ed94b7ac617da33c189d1d5faa3f692ac05249dba0a5282d03c"
+      },
+      "./src/constants/error-codes.ts": {
+        "version": "a1a996941dade083426880cc64aa39b308e1cd09a4bceeaac5b7ad4dabeee839",
+        "signature": "507e373fd4fa82d9d8575be15575b14d354900d4e84c99bebddb5791fd2fa772"
+      },
+      "./src/exceptions/http.exception.ts": {
+        "version": "8e61b6537a1e3178fbf8075ae38d04cc8d40966f431fbe14019b387016c76907",
+        "signature": "8660f0f10db8174607edffe0a9934d00a25157aeb13197d9c581cf85c8450d6f"
+      },
+      "./src/constants/error-names.ts": {
+        "version": "e5958c43d67ce1c1884c767176ec4d04c1ec4f9df473e061387ef0e2bec8ebb8",
+        "signature": "024b566efa7de89ece54ef990c233892839f89a99fa636ba9ffbae3edaa8663c"
+      },
+      "./src/controllers/auth.controller.ts": {
+        "version": "8e475a40308fa206f68a85b5e0759f372b1507444705b8ae1c5431a77d2998aa",
+        "signature": "2e277ffb181072ecb7857274488b3d048bdbe89084b2b5a99b8986d47b6363b1"
+      },
+      "./src/routes/auth/index.ts": {
+        "version": "8e4704c067886e079d8d34eab4daceb58a189ac5375cc6b0f2454f55ac74d4ac",
+        "signature": "c106970ee4b686b5ebf0964ea4e0d1b2af02bdecd2d5cfeecedeb7bb5b2f404b"
+      },
+      "./src/controllers/index.controller.ts": {
+        "version": "ea8fc6295bdf6ada4ebf11007a7dbe43664850934e7f79473b159dd8e554592f",
+        "signature": "f3cec8e8a6a4a3d800e8a23294ae101c811da40b4155ff0ef76dcf53df47f182"
+      },
+      "./src/routes/index.ts": {
+        "version": "8882e9751ec234444ea3ef2761566d18803f54f1e717279bf923a72d8c5237f4",
+        "signature": "c106970ee4b686b5ebf0964ea4e0d1b2af02bdecd2d5cfeecedeb7bb5b2f404b"
+      },
+      "./src/controllers/errors.controller.ts": {
+        "version": "06a51294b49e9ef0c2af9e4174d00460fe6ab01f5192488ffd982a43358c05ea",
+        "signature": "e00e0a58ec8287f4ede169c76c4c2d90c76f3c9e19041ba67982b9e1d6036624"
       },
       "./src/app.ts": {
-        "version": "65a57d2f2d116bfdc580626e5f2531e7c20e8febba065c85a5aa1f83afbb02a2",
+        "version": "237120d058e96ee7c670c3143f378f16febb1eb0e1d45bfc0f72f730caf51bfe",
+        "signature": "8f3485f49d16e63691ccc82a7ed4c32822f44c5f2a312575260d238c88217eec"
+      },
+      "./src/server.ts": {
+        "version": "0325678ddd100ee4671628bb9c7129672f865d471e10607c2a2c7762a00cf01b",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "./node_modules/@types/color-name/index.d.ts": {
@@ -402,6 +490,7 @@
       "composite": true,
       "removeComments": true,
       "strict": true,
+      "noImplicitAny": false,
       "moduleResolution": 2,
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
@@ -1099,10 +1188,192 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./node_modules/@types/passport-strategy/index.d.ts": [
+        "./node_modules/@types/passport/index.d.ts",
+        "./node_modules/@types/express/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/passport-local/index.d.ts": [
+        "./node_modules/@types/passport-strategy/index.d.ts",
+        "./node_modules/@types/express/index.d.ts",
+        "./node_modules/@types/passport/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/interfaces/base-model.interface.ts": [
+        "./node_modules/@types/mongoose/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/interfaces/user-model.interface.ts": [
+        "./src/interfaces/base-model.interface.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/jsonwebtoken/index.d.ts": [
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/validator/index.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/constants/error-message.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/models/user.model.ts": [
+        "./node_modules/@types/mongoose/index.d.ts",
+        "./src/interfaces/user-model.interface.ts",
+        "./node_modules/@types/node/crypto.d.ts",
+        "./node_modules/@types/jsonwebtoken/index.d.ts",
+        "./node_modules/@types/validator/index.d.ts",
+        "./src/constants/error-message.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/config/passport.ts": [
+        "./node_modules/@types/passport/index.d.ts",
+        "./node_modules/@types/passport-local/index.d.ts",
+        "./src/models/user.model.ts",
+        "./src/constants/error-message.ts",
+        "./src/interfaces/user-model.interface.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/libs/utils.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/constants/success-message.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/constants/status-code.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/libs/req-validators.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/constants/error-codes.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/exceptions/http.exception.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/constants/error-names.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/controllers/auth.controller.ts": [
+        "./node_modules/@types/express/index.d.ts",
+        "./src/models/user.model.ts",
+        "./src/libs/utils.ts",
+        "./src/constants/success-message.ts",
+        "./src/constants/status-code.ts",
+        "./src/libs/req-validators.ts",
+        "./src/constants/error-message.ts",
+        "./src/constants/error-codes.ts",
+        "./node_modules/@types/passport/index.d.ts",
+        "./src/exceptions/http.exception.ts",
+        "./src/constants/error-names.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/routes/auth/index.ts": [
+        "./node_modules/@types/express/index.d.ts",
+        "./src/controllers/auth.controller.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/controllers/index.controller.ts": [
+        "./node_modules/@types/express/index.d.ts",
+        "./src/libs/utils.ts",
+        "./src/constants/status-code.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/routes/index.ts": [
+        "./node_modules/@types/express/index.d.ts",
+        "./src/routes/auth/index.ts",
+        "./src/controllers/index.controller.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/controllers/errors.controller.ts": [
+        "./node_modules/@types/express/index.d.ts",
+        "./src/exceptions/http.exception.ts",
+        "./src/constants/status-code.ts",
+        "./src/constants/error-message.ts",
+        "./src/libs/utils.ts",
+        "./src/constants/error-names.ts",
+        "./src/constants/error-codes.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "./src/app.ts": [
         "./node_modules/@types/express/index.d.ts",
         "./src/config/middlewares.ts",
         "./src/config/db.ts",
+        "./src/config/passport.ts",
+        "./src/routes/index.ts",
+        "./src/exceptions/http.exception.ts",
+        "./src/controllers/errors.controller.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/server.ts": [
+        "./src/app.ts",
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/@types/node/util.d.ts",
@@ -1804,6 +2075,67 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "./node_modules/@types/passport-strategy/index.d.ts": [
+        "./node_modules/@types/passport/index.d.ts",
+        "./node_modules/@types/express/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/passport-local/index.d.ts": [
+        "./node_modules/@types/passport-strategy/index.d.ts",
+        "./node_modules/@types/express/index.d.ts",
+        "./node_modules/@types/passport/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/interfaces/base-model.interface.ts": [
+        "./node_modules/@types/mongoose/index.d.ts"
+      ],
+      "./src/interfaces/user-model.interface.ts": [
+        "./src/interfaces/base-model.interface.ts"
+      ],
+      "./node_modules/@types/jsonwebtoken/index.d.ts": [
+        "./node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/@types/validator/index.d.ts": [
+        "./node_modules/@types/node/fs.d.ts",
+        "./node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/@types/node/util.d.ts",
+        "./node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/models/user.model.ts": [
+        "./node_modules/@types/mongoose/index.d.ts",
+        "./src/interfaces/user-model.interface.ts"
+      ],
+      "./src/controllers/auth.controller.ts": [
+        "./node_modules/@types/express-serve-static-core/index.d.ts",
+        "./node_modules/@types/express/index.d.ts"
+      ],
+      "./src/routes/auth/index.ts": [
+        "./node_modules/@types/express-serve-static-core/index.d.ts"
+      ],
+      "./src/controllers/index.controller.ts": [
+        "./node_modules/@types/express-serve-static-core/index.d.ts",
+        "./node_modules/@types/express/index.d.ts"
+      ],
+      "./src/routes/index.ts": [
+        "./node_modules/@types/express-serve-static-core/index.d.ts"
+      ],
+      "./src/controllers/errors.controller.ts": [
+        "./src/exceptions/http.exception.ts",
+        "./node_modules/@types/express/index.d.ts"
+      ],
+      "./src/app.ts": [
+        "./node_modules/@types/express/index.d.ts"
+      ],
       "./node_modules/@types/color-name/index.d.ts": [
         "./node_modules/@types/node/fs.d.ts",
         "./node_modules/@types/node/ts3.2/fs.d.ts",
@@ -1923,12 +2255,34 @@
       "./node_modules/@types/mongodb/index.d.ts",
       "./node_modules/@types/mongoose/index.d.ts",
       "./node_modules/@types/bluebird/index.d.ts",
+      "./src/config/db.ts",
+      "./node_modules/@types/passport-strategy/index.d.ts",
+      "./node_modules/@types/passport-local/index.d.ts",
+      "./src/interfaces/base-model.interface.ts",
+      "./src/interfaces/user-model.interface.ts",
+      "./node_modules/@types/jsonwebtoken/index.d.ts",
+      "./node_modules/@types/validator/index.d.ts",
+      "./src/constants/error-message.ts",
+      "./src/models/user.model.ts",
+      "./src/config/passport.ts",
+      "./src/libs/utils.ts",
+      "./src/constants/success-message.ts",
+      "./src/constants/status-code.ts",
+      "./src/libs/req-validators.ts",
+      "./src/constants/error-codes.ts",
+      "./src/exceptions/http.exception.ts",
+      "./src/constants/error-names.ts",
+      "./src/controllers/auth.controller.ts",
+      "./src/routes/auth/index.ts",
+      "./src/controllers/index.controller.ts",
+      "./src/routes/index.ts",
       "./src/app.ts",
+      "./src/server.ts",
       "./node_modules/@types/color-name/index.d.ts",
       "./node_modules/@types/eslint-visitor-keys/index.d.ts",
       "./node_modules/@types/json-schema/index.d.ts",
       "./node_modules/@types/nodemon/index.d.ts",
-      "./src/config/db.ts"
+      "./src/controllers/errors.controller.ts"
     ]
   },
   "version": "3.8.3"

@@ -6,13 +6,20 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 
-const router = express.Router();
+export class Middlewares {
+    router = express.Router();
 
-dotenv.config({path: path.resolve(__dirname, '../../env/.env')});
-router.use(morgan("dev"));
-router.use(cors());
-router.use(passport.initialize());
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: false }));
+    constructor () {
+        dotenv.config({path: path.resolve(__dirname, '../../env/.env')});
+    }
 
-export default router;
+    initialize() {
+        this.router.use(morgan("dev"));
+        this.router.use(cors());
+        this.router.use(passport.initialize());
+        this.router.use(bodyParser.json());
+        this.router.use(bodyParser.urlencoded({ extended: false }));
+
+        return this.router;
+    }
+}

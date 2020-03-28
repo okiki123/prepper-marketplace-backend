@@ -9,19 +9,14 @@ export class Db {
     password = process.env.DB_PASSWORD;
     protocol = process.env.DB_PROTOCOL;
     additionalData = process.env.ADDITIONAL_DATA;
-    dbUrl: string;
+    dbUrl;
 
     constructor() {
-        this.validateEnvParams(this.host, 'DB_HOST');
-        this.validateEnvParams(this.name, 'DB_NAME');
-        this.validateEnvParams(this.username, 'DB_USERNAME');
-        this.validateEnvParams(this.password, 'DB_PASSWORD');
-        this.validateEnvParams(this.protocol, 'DB_PROTOCOL');
-        this.dbUrl = `${this.protocol}://${this.username}:${this.password}@${this.host}/${this.name}${this.additionalData}`;
-        console.log(this.dbUrl);
     }
 
     connect() {
+        this.validateFields();
+        this.dbUrl = `${this.protocol}://${this.username}:${this.password}@${this.host}/${this.name}${this.additionalData}`;
         mongoose.connect(this.dbUrl, {useNewUrlParser: true, autoReconnect: true})
             .then(() => {
                 return console.log(`Successfully connected to ${this.dbUrl}`);
@@ -46,9 +41,17 @@ export class Db {
         console.log('mongoose disconnected ' + err );
     }
 
-    private validateEnvParams(param: string | undefined, paramName: string) {
+    validateEnvParams(param: string | undefined, paramName: string) {
         if (!param) {
             throw new Error(`${paramName} is not set in the .env file`);
         }
+    }
+
+    validateFields() {
+        this.validateEnvParams(this.host, 'DB_HOST');
+        this.validateEnvParams(this.name, 'DB_NAME');
+        this.validateEnvParams(this.username, 'DB_USERNAME');
+        this.validateEnvParams(this.password, 'DB_PASSWORD');
+        this.validateEnvParams(this.protocol, 'DB_PROTOCOL');
     }
 }
