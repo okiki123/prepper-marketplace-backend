@@ -1,19 +1,39 @@
-import express, {Request, Response} from 'express';
-import middlewares from './config/middlewares';
+import express, {Request, Response, Application} from 'express';
+import {Middlewares} from './config/middlewares';
 import {Db} from './config/db';
+import {PassportAuthenticate as Authenticator} from "./config/passport";
+import api from './routes/index';
+import {HttpException} from "./exceptions/http.exception";
+import {ErrorsController} from "./controllers/errors.controller";
 
-const app = express();
-const db = new Db();
-const PORT = process.env.PORT;
+export class App {
+    app: Application;
+    port;
 
-app.use(middlewares);
-db.connect();
+    constructor() {
+        this.app = express();
+        this.setConfigs();
+    }
 
-app.get('/', (req: Request, res: Response) => {
-    res.json({message: 'testing'});
-});
+    private setConfigs() {
+        const middleWare = new Middlewares();
+        const db = new Db();
+        const authenticator = new Authenticator();
+        this.app.use(middleWare.initialize());
+        db.connect();
+        authenticator.run();
+        this.app.use(api);
+        this.app.use(ErrorsController.undefinedRoute);
+        this.app.use(ErrorsController.errorHandler);
+    }
 
-app.listen(PORT, () => {
-    console.log(`Node Server listening on Port ${PORT}`);
-});
+    run() {
+        this.port = process.env.PORT;
+        this.app.listen(this.port, () => {
+            console.log(`Node Server listening on Port ${this.port}`);
+        });
+    }
+}
+
+
 
