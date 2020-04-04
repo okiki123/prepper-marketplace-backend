@@ -3,5 +3,6 @@ export const ERROR_NAMES = {
     VALIDATION: 'ValidationError',
     MONGO: 'MongoError',
     UNKNOWN: 'Unknown',
-    REQUEST_ERROR: 'RequestError'
+    REQUEST_ERROR: 'RequestError',
+    NOT_FOUND: 'NotFoundError'
 };

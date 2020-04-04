@@ -11,13 +11,13 @@
     "watch-ts": "tsc -w",
     "build": "tsc",
     "start:dev": "nodemon",
-    "kill": "kill $(lsof -t -i:7000) | exit 0",
+    "kill": "kill $(lsof -t -i:3000) | exit 0",
     "clean": "rimraf ./dist/*"
   },
   "nodemonConfig": {
     "exec": "npm run start",
     "watch": [
-      "dist/*"
+      "src/"
     ]
   },
   "authors": [
@@ -33,8 +33,7 @@
     "@typescript-eslint/parser": "^2.24.0",
     "babel-eslint": "^10.1.0",
     "concurrently": "^5.1.0",
-    "eslint": "^6.8.0",
-    "nodemon": "^2.0.2"
+    "eslint": "^6.8.0"
   },
   "dependencies": {
     "@types/bluebird": "^3.5.30",
@@ -58,6 +57,7 @@
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.5",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",

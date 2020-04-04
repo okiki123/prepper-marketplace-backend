@@ -16,16 +16,23 @@ export let UserSchema: Schema<UserModelInterface> = new Schema({
             message: ERROR_MESSAGES.INVALID_EMAIL
         },
     },
+    firstname: {type: String, required: !this.isNew},
+    lastname: {type: String, required: !this.isNew},
+    address: {
+        street1: {type: String, required: !this.isNew},
+        street2: {type: String},
+        city: {type: String, required: !this.isNew},
+        postalCode: {type: String}
+    },
     password: {type: String, required: true},
     token: {type: String},
     salt: {type: String},
     createdAt: {type: Date, required: true, default: Date.now},
     updatedAt: {type: Date, required: false},
-    noOfLogin: {type: Number, default: 0}
+    noOfLogin: {type: Number, default: 0},
 });
 UserSchema.pre<UserModelInterface>('save', function (next) {
     this.hashPassword(this.password);
-
     next();
 });
 
@@ -50,6 +57,10 @@ UserSchema.methods.validatePassword = function (password) {
 UserSchema.methods.createUser = function (userData) {
     this.load(userData);
     return this.save();
+};
+
+UserSchema.methods.updateUser = function (userData) {
+    return this.findByIdAndUpdate(this.id, userData, {new: true});
 };
 
 UserSchema.methods.generateJWT = function () {

@@ -1,9 +1,8 @@
-import express, {Request, Response, Application} from 'express';
+import express, {Application} from 'express';
 import {Middlewares} from './config/middlewares';
 import {Db} from './config/db';
 import {PassportAuthenticate as Authenticator} from "./config/passport";
 import api from './routes/index';
-import {HttpException} from "./exceptions/http.exception";
 import {ErrorsController} from "./controllers/errors.controller";
 
 export class App {

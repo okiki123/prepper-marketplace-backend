@@ -1,4 +1,4 @@
-export class HttpException extends Error{
+export abstract class BaseError extends Error {
     status;
     message;
     errors;
@@ -6,9 +6,8 @@ export class HttpException extends Error{
     code;
     errmsg;
 
-    constructor(status, message, errors?, name?, code?) {
+    protected constructor(message, errors?, name?, code?) {
         super(message);
-        this.status = status;
         this.message = message;
         this.errors = errors;
         this.name = name;

@@ -1,10 +1,10 @@
 export class ReqValidators {
     errors: string[] = [];
 
-    validateFields = (field, fieldName: string, type?: string, required?: boolean) => {
+    validateFields = (field, fieldName: string, type?: string, required: boolean = true) => {
         if (required && !field) {
             this.errors.push(`${fieldName} is required`);
-        } else if (type && typeof field !== type) {
+        } else if (field && type && typeof field !== type) {
             this.errors.push(`${fieldName} must be ${type}`);
         }
     };
