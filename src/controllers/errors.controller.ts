@@ -1,13 +1,14 @@
 import {Request, Response, NextFunction} from "express";
-import {HttpException} from "../exceptions/http.exception";
+import {HttpError} from "../exceptions/http.error";
 import {STATUS} from "../constants/status-code";
 import {ERROR_MESSAGES} from "../constants/error-message";
 import {Utils} from "../libs/utils";
 import {ERROR_NAMES} from "../constants/error-names";
 import {ERROR_CODES} from "../constants/error-codes";
+import {NotFoundError} from "../exceptions/not-found.error";
 
 export class ErrorsController {
-    static errorHandler(err: HttpException, req: Request, res: Response, next: NextFunction) {
+    static errorHandler(err: HttpError, req: Request, res: Response, next: NextFunction) {
         switch (err.name) {
             case ERROR_NAMES.VALIDATION:
                 let errors: any[] = [];
@@ -41,9 +42,7 @@ export class ErrorsController {
     }
 
     static undefinedRoute(req: Request, res: Response, next: NextFunction) {
-        const notFoundError = new HttpException(STATUS.NOT_FOUND,
-            ERROR_MESSAGES.undefinedRoute(req.url), null, null,
-            ERROR_CODES.NOT_FOUND);
+        const notFoundError = new NotFoundError(ERROR_MESSAGES.undefinedRoute(req.url));
 
         return next(notFoundError);
     }

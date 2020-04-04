@@ -14,4 +14,5 @@ export interface UserModelInterface extends BaseModelInterface {
     generateJWT(): any;
     createUser(userData): any;
     hashPassword(password): any;
+    updateUser(userData): any;
 }
