@@ -97,15 +97,15 @@ export class UserController {
                 Utils.handleNotFound('User', next)
             }
             const isPasswordValid = user.validatePassword(req.body.currentPassword);
-            // if (!isPasswordValid) {
-            //     const httpError = new HttpError(STATUS.BAD_REQUEST,
-            //         ERROR_MESSAGES.INCORRECT_PASSWORD,
-            //         null,
-            //         null,
-            //         ERROR_CODES.UNAUTHORIZED_KEY);
-            //
-            //     return next(httpError);
-            // }
+            if (!isPasswordValid) {
+                const httpError = new HttpError(STATUS.BAD_REQUEST,
+                    ERROR_MESSAGES.INCORRECT_PASSWORD,
+                    null,
+                    null,
+                    ERROR_CODES.UNAUTHORIZED_KEY);
+
+                return next(httpError);
+            }
 
             user.password = req.body.newPassword;
             user.save().then((user) => {
