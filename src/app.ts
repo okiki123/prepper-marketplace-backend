@@ -28,8 +28,10 @@ export class App {
 
     run() {
         this.port = process.env.PORT;
-        this.app.listen(this.port, () => {
-            console.log(`Node Server listening on Port ${this.port}`);
+        return this.app.listen(this.port, () => {
+            if (process.env.APP_ENVIRONMENT === 'development') {
+                console.log(`Node Server listening on Port ${this.port}`);
+            }
         });
     }
 }

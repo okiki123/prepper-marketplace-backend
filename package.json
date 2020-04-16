@@ -5,13 +5,13 @@
   "main": "dist/app.js",
   "scripts": {
     "lint": "eslint src/*.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config ./jest.config.js --forceExit --detectOpenHandles",
     "start": "ts-node src/server.ts",
     "build:dev": "npm-run-all watch-ts",
     "watch-ts": "tsc -w",
     "build": "tsc",
     "start:dev": "nodemon",
-    "kill": "kill $(lsof -t -i:3000) | exit 0",
+    "kill": "kill $(lsof -t -i:6000) | exit 0",
     "clean": "rimraf ./dist/*"
   },
   "nodemonConfig": {
@@ -28,12 +28,17 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "@types/nodemon": "^1.19.0",
+    "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
     "babel-eslint": "^10.1.0",
     "concurrently": "^5.1.0",
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "jest": "^25.3.0",
+    "supertest": "^4.0.2",
+    "ts-jest": "^25.3.1"
   },
   "dependencies": {
     "@types/bluebird": "^3.5.30",
