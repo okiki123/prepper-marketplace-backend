@@ -14,12 +14,14 @@ export class Db {
     constructor() {
     }
 
-    connect() {
+    async connect() {
         this.validateFields();
         this.dbUrl = `${this.protocol}://${this.username}:${this.password}@${this.host}/${this.name}${this.additionalData}`;
-        mongoose.connect(this.dbUrl, {useNewUrlParser: true, autoReconnect: true})
+        await mongoose.connect(this.dbUrl, {useNewUrlParser: true, autoReconnect: true})
             .then(() => {
-                return console.log(`Successfully connected to ${this.dbUrl}`);
+                if (process.env.APP_ENVIRONMENT === "development") {
+                    return console.log(`Successfully connected to ${this.dbUrl}`);
+                }
             })
             .catch((err) => {
                 console.log("Error connecting to database: ", err);
@@ -34,7 +36,9 @@ export class Db {
     }
 
     private connecting() {
-        console.log('mongoose connecting to ' + this.dbUrl);
+        if (process.env.APP_ENVIRONMENT === 'development') {
+            console.log('mongoose connecting to ' + this.dbUrl);
+        }
     }
 
     private disconnected(err: any) {

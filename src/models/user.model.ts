@@ -16,12 +16,12 @@ export let UserSchema: Schema<UserModelInterface> = new Schema({
             message: ERROR_MESSAGES.INVALID_EMAIL
         },
     },
-    firstname: {type: String, required: !this.isNew},
-    lastname: {type: String, required: !this.isNew},
+    firstname: {type: String},
+    lastname: {type: String},
     address: {
-        street1: {type: String, required: !this.isNew},
+        street1: {type: String},
         street2: {type: String},
-        city: {type: String, required: !this.isNew},
+        city: {type: String},
         postalCode: {type: String}
     },
     password: {type: String, required: true},

@@ -1,5 +1,6 @@
 export const STATUS = {
     OK: 200,
+    RESOURCE_CREATED: 201,
     UNAUTHORIZED: 401,
     BAD_REQUEST: 400,
     NOT_FOUND: 404,

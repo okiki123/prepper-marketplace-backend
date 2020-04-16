@@ -8,7 +8,6 @@ import {ERROR_MESSAGES} from "../constants/error-message";
 import {ERROR_CODES} from "../constants/error-codes";
 import passport from 'passport';
 import {HttpError} from "../exceptions/http.error";
-import {ERROR_NAMES} from "../constants/error-names";
 import {RequestValidationError} from "../exceptions/request-validation.error";
 
 export class AuthController {
@@ -17,7 +16,7 @@ export class AuthController {
         const postData = req.body;
         user.createUser(postData)
             .then((data) => {
-                return Utils.sendJSONResponse(res, STATUS.OK, {
+                return Utils.sendJSONResponse(res, STATUS.RESOURCE_CREATED, {
                     message: SUCCESS_MESSAGES.createdSuccesfully('User')
                 });
             }).catch((err) => {
