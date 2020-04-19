@@ -26,7 +26,7 @@ export class ErrorsController {
                 console.log(err);
                     return Utils.sendJSONResponse(res, STATUS.BAD_REQUEST, {
                         code: err.code,
-                        message: ERROR_MESSAGES.failedToSave('User'),
+                        message: ERROR_MESSAGES.failedToSave('Resource'),
                         errors: [err.errmsg]
                     });
 

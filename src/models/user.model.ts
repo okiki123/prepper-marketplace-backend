@@ -60,7 +60,7 @@ UserSchema.methods.createUser = function (userData) {
 };
 
 UserSchema.methods.updateUser = function (userData) {
-    return this.findByIdAndUpdate(this.id, userData, {new: true});
+    return UserModel.findByIdAndUpdate(this.id, userData, {new: true});
 };
 
 UserSchema.methods.generateJWT = function () {
