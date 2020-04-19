@@ -8,7 +8,8 @@ import {ERROR_MESSAGES} from "../constants/error-message";
 import {ERROR_CODES} from "../constants/error-codes";
 import passport from 'passport';
 import {HttpError} from "../exceptions/http.error";
-import {RequestValidationError} from "../exceptions/request-validation.error";
+import {BaseController} from "./base.controller";
+import {LoginValidator} from "../validators/login.validator";
 
 export class AuthController {
     static register = (req: Request, res: Response, next: NextFunction) => {
@@ -25,16 +26,8 @@ export class AuthController {
     };
 
     static login = (req: Request, res: Response, next: NextFunction) => {
-        const user = new UserModel();
         const postData = req.body;
-        const request = new ReqValidators();
-        request.validateFields(postData.username, 'username', 'string', true);
-        request.validateFields(postData.password, 'username', 'string', true);
-        if (request.hasErrors()) {
-            const reqError = new RequestValidationError(ERROR_MESSAGES.FAILED_LOGIN, request.errors);
-
-            return next(reqError);
-        }
+        BaseController.validate(postData, next, LoginValidator);
 
         return passport.authenticate('local', { session: false }, (err, passportUser, info) => {
             if (err) {
