@@ -11,6 +11,7 @@
     "watch-ts": "tsc -w",
     "build": "tsc",
     "start:dev": "nodemon",
+    "set-env": "./src/deploy/staging.sh",
     "kill": "kill $(lsof -t -i:6000) | exit 0",
     "clean": "rimraf ./dist/*"
   },
