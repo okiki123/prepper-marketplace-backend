@@ -8,12 +8,13 @@ import {ERROR_MESSAGES} from "../constants/error-message";
 import {CoursepackValidator} from "../validators/coursepack.validator";
 import {BaseController} from "./base.controller";
 import {SUCCESS_MESSAGES} from "../constants/success-message";
+import {CourseModel as Course} from "../models/course.model";
 
 export class CoursepackController extends BaseController {
-    static all = (req: Request, res: Response, next: NextFunction) => {
-        ReqValidators.validateId(req.params.id, next, ERROR_MESSAGES.failedToget('Coursepacks'));
-        Utils.checkExistence(req.params.id, next, User, 'User');
-        CoursePack.find({user: req.params.id}).populate('lessons').then((data: any) => {
+    static all = async (req: Request, res: Response, next: NextFunction) => {
+        ReqValidators.IdValidate(req.params.id, next, ERROR_MESSAGES.failedToget('Coursepacks'));
+        await Utils.checkExistence(req.params.id, next, User, 'User');
+        CoursePack.find({user: req.params.id}).populate('userModel').then((data: any) => {
             if (!data) {
                 Utils.handleNotFound('Coursepack', next);
             }
@@ -26,9 +27,9 @@ export class CoursepackController extends BaseController {
         });
     };
 
-    static new = (req: Request, res: Response, next: NextFunction) => {
-        ReqValidators.validateId(req.params.id, next, ERROR_MESSAGES.failedToget('Coursepacks'));
-        Utils.checkExistence(req.params.id, next, User, 'User');
+    static new = async (req: Request, res: Response, next: NextFunction) => {
+        ReqValidators.IdValidate(req.params.id, next, ERROR_MESSAGES.failedToSave('Coursepacks'));
+        await Utils.checkExistence(req.params.id, next, User, 'User');
         const postData = req.body;
         BaseController.validate(postData, next, CoursepackValidator);
         const coursepackData = {
@@ -49,9 +50,9 @@ export class CoursepackController extends BaseController {
     };
 
     static edit = async (req: Request, res: Response, next: NextFunction) => {
-        ReqValidators.validateId(req.params.id, next, ERROR_MESSAGES.failedToSave('Coursepacks'));
-        ReqValidators.validateId(req.params.coursepackId, next, ERROR_MESSAGES.failedToSave('Coursepacks'));
-        Utils.checkExistence(req.params.id, next, User, 'User');
+        const ids = [req.params.id, req.params.coursepackId];
+        ReqValidators.IdValidate(ids, next, ERROR_MESSAGES.failedToSave('Coursepacks'));
+        await Utils.checkExistence(req.params.id, next, User, 'User');
         const postData = req.body;
         BaseController.validate(postData, next, CoursepackValidator);
         const coursepackData = {...postData, ...{updatedAt: new Date()}};
@@ -68,17 +69,19 @@ export class CoursepackController extends BaseController {
         });
     };
 
-    static delete = (req: Request, res: Response, next: NextFunction) => {
-        ReqValidators.validateId(req.params.id, next, ERROR_MESSAGES.failedToDelete('Coursepacks'));
-        ReqValidators.validateId(req.params.coursepackId, next, ERROR_MESSAGES.failedToDelete('Coursepacks'));
-        Utils.checkExistence(req.params.id, next, User, 'User');
-        CoursePack.findByIdAndDelete({_id: req.params.coursepackId}).then((data) => {
-            if (!data) {
-                Utils.handleNotFound('Coursepack', next)
-            }
+    static delete = async (req: Request, res: Response, next: NextFunction) => {
+        const ids = [req.params.id, req.params.coursepackId];
+        ReqValidators.IdValidate(ids, next, ERROR_MESSAGES.failedToSave('Coursepacks'));
+        await Utils.checkExistence(req.params.id, next, User, 'User');
+        CoursePack.findByIdAndDelete({_id: req.params.coursepackId}).then(async (data: any) => {
+            console.log(data);
+            await data.courses.forEach(async (id) => {
+                const course = new Course({_id: id});
+                await course.delete(id, next);
+            });
             return Utils.sendJSONResponse(res, STATUS.OK, {
                 message: SUCCESS_MESSAGES.deletedSuccessfully('Coursepack')
-            });
+            })
         }).catch((err) => {
            return next(err);
         });
