@@ -1,10 +1,12 @@
 import {Model, model, Schema} from 'mongoose';
 import {CoursepackModelInterface} from "../interfaces/coursepack-model.interface";
 import {Utils} from "../libs/utils";
+import {STATUS} from "../constants/status-code";
+import {SUCCESS_MESSAGES} from "../constants/success-message";
 
 export let CoursePackSchema: Schema<CoursepackModelInterface> = new Schema({
     title: {type: String, required: true, unique: true},
-    user: { type: Schema.Types.ObjectId, ref: 'UserModel', required: true},
+    user: { type: Schema.Types.ObjectId, ref: 'userModel', required: true},
     courses: [{ type: Schema.Types.ObjectId, ref: 'CourseModel'}],
     price: {type: Number, required: true},
     approve: {type: Boolean, default: false},
@@ -38,6 +40,17 @@ CoursePackSchema.methods.get = async function (id, next) {
 CoursePackSchema.methods.saveData = function (data) {
     this.load(data);
     return this.save();
+};
+
+CoursePackSchema.methods.removeCourse = async function (id, next) {
+    await CoursePackModel.findByIdAndUpdate(
+        {_id: this._id},
+        {$pull: {courses: id}}
+    ).then((data) => {
+        return;
+    }).catch((err) => {
+        return next(err);
+    });
 };
 
 export const CoursePackModel: Model<CoursepackModelInterface> = model<CoursepackModelInterface>('coursepacks', CoursePackSchema);

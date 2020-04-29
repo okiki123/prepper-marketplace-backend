@@ -6,4 +6,6 @@ export interface CoursepackModelInterface extends BaseModelInterface {
     courses: any[];
     price: string;
     approve: boolean;
+    removeCourse(id, next): any;
+    delete(): any;
 }

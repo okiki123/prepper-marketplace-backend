@@ -4,7 +4,8 @@ import {UserModel as User} from "../models/user.model";
 
 export class Utils {
     static sendJSONResponse(res, status, data) {
-        return res.status(status).json(data);
+        res.status(status).json(data);
+        return res.end();
     }
 
     static handleNotFound(item, next) {
@@ -12,8 +13,8 @@ export class Utils {
         return next(notFoundError);
     }
 
-    static checkExistence(id, next, item, entity) {
-        item.findOne({_id: id}).then((data) => {
+    static async checkExistence(id, next, item, entity) {
+        await item.findOne({_id: id}).then((data) => {
             if (!data) {
                 return Utils.handleNotFound(entity, next);
             }

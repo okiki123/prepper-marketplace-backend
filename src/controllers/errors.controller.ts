@@ -31,7 +31,6 @@ export class ErrorsController {
                     });
 
             default:
-                console.log(err);
                 const status = err.status || STATUS.INTERNAL_SERVER_ERROR;
                 return Utils.sendJSONResponse(res, status, {
                     message: err.message || ERROR_MESSAGES.SOMETHING_WENT_WRONG,

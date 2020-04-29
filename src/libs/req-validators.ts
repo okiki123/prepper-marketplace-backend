@@ -14,12 +14,22 @@ export class ReqValidators {
         }
     };
 
+    static IdValidate = (id, next: NextFunction, msg) => {
+        if (Array.isArray(id)) {
+            id.forEach((el) => {
+                ReqValidators.validateId(el, next, msg)
+            });
+        } else {
+            ReqValidators.validateId(id, next, msg)
+        }
+    };
+
     static validateId = (id, next: NextFunction, msg) => {
-      if (!ObjectID.isValid(id)) {
-          const reqError = new RequestValidationError(msg,
-              [ERROR_MESSAGES.INVALID_ID]);
-          return next(reqError);
-      }
+        if (!ObjectID.isValid(id)) {
+            const reqError = new RequestValidationError(msg,
+                [ERROR_MESSAGES.INVALID_ID]);
+            return next(reqError);
+        }
     };
 
     hasErrors = () => {
