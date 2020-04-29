@@ -8,11 +8,11 @@ notifications:
 branches:
   only:
     - staging
-script:
+install:
   - npm install
+script:
   - npm run lint
   - npm run test
-  - ls
   - 'if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then
   npm run clean;
   npm run build
