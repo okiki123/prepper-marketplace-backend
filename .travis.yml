@@ -13,6 +13,7 @@ install:
 script:
   - npm run lint
   - npm run set-env
+  - cat env/.env
   - npm run test
   - 'if [ "$TRAVIS_EVENT_TYPE" = "push" ] ; then
   npm run clean;
