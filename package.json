@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src/*.ts",
     "test": "jest --config ./jest.config.js --forceExit --detectOpenHandles",
-    "start": "ts-node src/server.ts",
+    "start": "cat env/.env && ts-node src/server.ts",
     "build:dev": "npm-run-all watch-ts",
     "watch-ts": "tsc -w",
     "build": "tsc",
