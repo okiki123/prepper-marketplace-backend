@@ -19,6 +19,8 @@ script:
   npm run clean;
   npm run build
   ; fi'
+before_deploy:
+  - npm run set-env
 deploy:
   provider: heroku
   api_key:

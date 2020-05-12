@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src/*.ts",
     "test": "jest --config ./jest.config.js --forceExit --detectOpenHandles",
-    "start": "cat env/.env && ts-node src/server.ts",
+    "start": "ts-node src/server.ts",
     "build:dev": "npm-run-all watch-ts",
     "watch-ts": "tsc -w",
     "build": "tsc",
@@ -15,20 +15,6 @@
     "kill": "kill $(lsof -t -i:6000) | exit 0",
     "clean": "rimraf ./dist/*"
   },
-  "nodemonConfig": {
-    "exec": "npm run start",
-    "watch": [
-      "src/"
-    ],
-    "ext": "ts"
-  },
-  "authors": [
-    {
-      "name": "Malomo Damilare",
-      "email": "damilaremalomo@gmail.com"
-    }
-  ],
-  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/nodemon": "^1.19.0",
@@ -75,5 +61,19 @@
   },
   "engines": {
     "node": "12.16.1"
-  }
+  },
+  "nodemonConfig": {
+    "exec": "npm run start",
+    "watch": [
+      "src/"
+    ],
+    "ext": "ts"
+  },
+  "authors": [
+    {
+      "name": "Malomo Damilare",
+      "email": "damilaremalomo@gmail.com"
+    }
+  ],
+  "license": "MIT"
 }
