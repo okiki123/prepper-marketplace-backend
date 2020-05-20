@@ -53,4 +53,12 @@ CoursePackSchema.methods.removeCourse = async function (id, next) {
     });
 };
 
+CoursePackSchema.methods.getTitle = async function (id, next) {
+     await CoursePackModel.findById(id).then((data: any) => {
+         return data.title
+     }).catch((err) => {
+         return next(err);
+     });
+};
+
 export const CoursePackModel: Model<CoursepackModelInterface> = model<CoursepackModelInterface>('coursepacks', CoursePackSchema);

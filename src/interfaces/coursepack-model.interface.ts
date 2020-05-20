@@ -8,4 +8,5 @@ export interface CoursepackModelInterface extends BaseModelInterface {
     approve: boolean;
     removeCourse(id, next): any;
     delete(): any;
+    getTitle(id, next): any
 }

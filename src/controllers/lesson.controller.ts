@@ -6,7 +6,6 @@ import {Utils} from "../libs/utils";
 import {CourseModel as Course} from "../models/course.model";
 import {LessonModel as Lesson} from "../models/lesson.model";
 import {STATUS} from "../constants/status-code";
-import {CoursePackModel as CoursePack} from "../models/coursepack.model";
 import {LessonValidator} from "../validators/lesson.validator";
 import {SUCCESS_MESSAGES} from "../constants/success-message";
 
@@ -14,11 +13,15 @@ export class LessonController extends BaseController {
     static all = async (req: Request, res: Response, next: NextFunction) => {
         ReqValidators.IdValidate(req.params.id, next, ERROR_MESSAGES.failedToget('Lessons'));
         await Utils.checkExistence(req.params.id, next, Course, 'Course');
-        Lesson.find({course: req.params.id}).then((data: any) => {
+        Lesson.find({course: req.params.id}).then(async (data: any) => {
             if (!data) {
                 Utils.handleNotFound('Lesson', next);
             }
-            return Utils.sendJSONResponse(res, STATUS.OK, data);
+            let course;
+            await Course.findById(req.params.id).then((data) => {
+               course = data;
+            });
+            return Utils.sendJSONResponse(res, STATUS.OK, {data, course});
         }).catch((err) => {
             return next(err);
         });
