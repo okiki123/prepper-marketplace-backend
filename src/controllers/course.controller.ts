@@ -1,5 +1,5 @@
 import {Request, Response, NextFunction} from "express";
-import {CoursePackModel as CoursePack} from "../models/coursepack.model";
+import {CoursePackModel, CoursePackModel as CoursePack} from "../models/coursepack.model";
 import {CourseModel as Course} from "../models/course.model";
 import {LessonModel as Lesson} from "../models/lesson.model";
 import {Utils} from "../libs/utils";
@@ -9,22 +9,28 @@ import {ERROR_MESSAGES} from "../constants/error-message";
 import {BaseController} from "./base.controller";
 import {SUCCESS_MESSAGES} from "../constants/success-message";
 import {CourseValidator} from "../validators/course.validator";
+import {CoursepackModelInterface} from "../interfaces/coursepack-model.interface";
 
 export class CourseController extends BaseController {
     static all = async (req: Request, res: Response, next: NextFunction) => {
         ReqValidators.IdValidate(req.params.id, next, ERROR_MESSAGES.failedToget('Courses'));
         await Utils.checkExistence(req.params.id, next, CoursePack, 'Coursepack');
-        Course.find({coursepack: req.params.id}).then((data: any) => {
-            if (!data) {
-                Utils.handleNotFound('Course', next);
-            }
-            data.forEach((item) => {
-                item.lessons = item.lessons.length;
+        Course.find({coursepack: req.params.id})
+            .then(async (data: any) => {
+                if (!data) {
+                    Utils.handleNotFound('Course', next);
+                }
+                data.forEach((item) => {
+                    item.lessons = item.lessons.length;
+                });
+                let coursepack: any;
+                await CoursePackModel.findById(req.params.id).then((data: any) => {
+                   coursepack = data;
+                }).catch(err => next(err));
+                return Utils.sendJSONResponse(res, STATUS.OK, {data, coursepack});
+            }).catch((err) => {
+                return next(err);
             });
-            return Utils.sendJSONResponse(res, STATUS.OK, data);
-        }).catch((err) => {
-            return next(err);
-        });
     };
 
     static new = async (req: Request, res: Response, next: NextFunction) => {
