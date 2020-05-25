@@ -1,5 +1,5 @@
 export const ERROR_MESSAGES = {
-    USER_NOT_EXIST: 'Username does not exist',
+    USER_NOT_EXIST: 'Username or Email does not exist',
     INCORRECT_PASSWORD: 'The password you entered is incorrect',
     INVALID_EMAIL: 'Email is invalid',
     FAILED_LOGIN: 'Login failed',

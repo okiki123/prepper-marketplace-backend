@@ -11,7 +11,7 @@ export class PassportAuthenticate {
             usernameField: 'username',
             passwordField: 'password'
         }, (username, password, done) => {
-            UserModel.findOne({username: username}).then(function (user: UserModelInterface | null) {
+            UserModel.findOne({$or: [{username: username}, {email: username}]}).then(function (user: UserModelInterface | null) {
                 if (!user) {
                     return done(null, false, {message: ERROR_MESSAGES.USER_NOT_EXIST});
                 } else if (!user.validatePassword(password)) {
