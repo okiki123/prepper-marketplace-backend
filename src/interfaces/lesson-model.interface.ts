@@ -4,4 +4,5 @@ export interface LessonModelInterface extends BaseModelInterface {
     name: string;
     course: any;
     delete(id, next): any;
+    removeConversation(id, next): any;
 }
