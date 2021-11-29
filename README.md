@@ -29,4 +29,4 @@ npm run watch:dev
 ```
 
 ## Authors
-- Malomo Damilare <damilaremalomo@gmail.com>
+- Malomo Okikioluwa <okikimalomo17@gmail.com>
